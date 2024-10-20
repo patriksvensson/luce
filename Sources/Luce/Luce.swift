@@ -16,20 +16,20 @@ extension Bool {
 }
 
 extension Comparable {
-    public func shouldBeGreaterThan(_ value: Self) {
-        #expect(self > value)
+    public func shouldBeGreaterThan(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) {
+        #expect(self > value, sourceLocation: sourceLocation)
     }
 
-    public func shouldBeGreaterThanOrEqualTo(_ value: Self) {
-        #expect(self >= value)
+    public func shouldBeGreaterThanOrEqualTo(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) {
+        #expect(self >= value, sourceLocation: sourceLocation)
     }
 
-    public func shouldBeLessThan(_ value: Self) {
-        #expect(self < value)
+    public func shouldBeLessThan(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) {
+        #expect(self < value, sourceLocation: sourceLocation)
     }
 
-    public func shouldBeLessThanOrEqualTo(_ value: Self) {
-        #expect(self <= value)
+    public func shouldBeLessThanOrEqualTo(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) {
+        #expect(self <= value, sourceLocation: sourceLocation)
     }
 }
 
@@ -87,14 +87,14 @@ extension Optional {
 
 extension Equatable {
     @discardableResult
-    public func shouldBe(_ expected: Self) -> Self {
-        #expect(self == expected)
+    public func shouldBe(_ expected: Self, sourceLocation: SourceLocation = #_sourceLocation) -> Self {
+        #expect(self == expected, sourceLocation: sourceLocation)
         return self
     }
 
     @discardableResult
-    public func shouldNotBe(_ expected: Self) -> Self {
-        #expect(self != expected)
+    public func shouldNotBe(_ expected: Self, sourceLocation: SourceLocation = #_sourceLocation) -> Self {
+        #expect(self != expected, sourceLocation: sourceLocation)
         return self
     }
 }
