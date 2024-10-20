@@ -12,17 +12,6 @@ final class BoolTests {
     }
 }
 
-@Suite("Integer Tests")
-final class IntTests {
-    @Test func shouldBe() async throws {
-        0.shouldBe(0)
-    }
-
-    @Test func shouldNotBe() async throws {
-        0.shouldNotBe(1)
-    }
-}
-
 @Suite("String Tests")
 final class StringTests {
     @Test func shouldBe() async throws {
@@ -31,6 +20,30 @@ final class StringTests {
 
     @Test func shouldNotBe() async throws {
         "Hello World".shouldNotBe("Goodbye World")
+    }
+
+    @Test func shouldStartWith() async throws {
+        "Hello World".shouldStartWith("Hello")
+    }
+
+    @Test func shouldNotStartWith() async throws {
+        "Hello World".shouldNotStartWith("Goodbye")
+    }
+
+    @Test func shouldContain() async throws {
+        "Hello World".shouldContain("or")
+    }
+
+    @Test func shouldNotContain() async throws {
+        "Hello World".shouldNotContain("xyz")
+    }
+
+    @Test func shouldEndWith() async throws {
+        "Hello World".shouldEndWith("World")
+    }
+
+    @Test func shouldNotEndWith() async throws {
+        "Hello World".shouldNotEndWith("Universe")
     }
 }
 
@@ -65,5 +78,24 @@ final class EquatableTests {
 
     @Test func shouldNotBe() async throws {
         Lol.foo.shouldNotBe(Lol.bar)
+    }
+}
+
+@Suite("Comparable Tests")
+final class ComparableTests {
+    @Test func shouldBeGreaterThan() async throws {
+        2.shouldBeGreaterThan(1)
+    }
+
+    @Test func shouldBeGreaterThanOrEqualTo() async throws {
+        2.shouldBeGreaterThanOrEqualTo(2)
+    }
+
+    @Test func shouldBeLessThan() async throws {
+        1.shouldBeLessThan(2)
+    }
+
+    @Test func shouldBeLessThanOrEqualTo() async throws {
+        2.shouldBeLessThanOrEqualTo(2)
     }
 }
