@@ -16,20 +16,28 @@ extension Bool {
 }
 
 extension Comparable {
-    public func shouldBeGreaterThan(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) {
+    @discardableResult
+    public func shouldBeGreaterThan(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) -> Self {
         #expect(self > value, sourceLocation: sourceLocation)
+        return self
     }
 
-    public func shouldBeGreaterThanOrEqualTo(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) {
+    @discardableResult
+    public func shouldBeGreaterThanOrEqualTo(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) -> Self {
         #expect(self >= value, sourceLocation: sourceLocation)
+        return self
     }
 
-    public func shouldBeLessThan(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) {
+    @discardableResult
+    public func shouldBeLessThan(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) -> Self {
         #expect(self < value, sourceLocation: sourceLocation)
+        return self
     }
 
-    public func shouldBeLessThanOrEqualTo(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) {
+    @discardableResult
+    public func shouldBeLessThanOrEqualTo(_ value: Self, sourceLocation: SourceLocation = #_sourceLocation) -> Self {
         #expect(self <= value, sourceLocation: sourceLocation)
+        return self
     }
 }
 
